@@ -416,14 +416,14 @@ echo -e "$green [√]Wget Found!$blank"
 sleep 2
 fi
 # check ADB
-if [[ $(command -v adb) == " " ]]; then
+if [[ $(command -v adb) == "" ]]; then
 echo -e "$red  [×]ADB not Installed!$blank"
 read -p $'\e[1;92m Do you want to install (Y/n): ' adb_error
 if [[ $adb_error == 'Y' || $adb_error == 'y' ]]; then
 echo -e "$Yellow [•]Installing ADB...$blank"
 sleep 0.6
 if ping -c 1 google.com; then
-wget https://github.com/MasterDevX/Termux-ADB/raw/master/InstallTools.sh -q && bash InstallTools.sh
+wget https://github.com/https://raw.githubusercontent.com/MasterDevX/Termux-ADB/master/InstallTools.sh -q && bash InstallTools.sh
 adb devices > /dev/null 2>&1
 else
 echo -e "$red [!]No internet Connection$blank"
